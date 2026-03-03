@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixlands | Geleceği İnşa Ediyoruz</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root {
+    --accent-color: #3b82f6;
+    --text-main: #ffffff;
+    --text-secondary: #8e95a1;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #07080c, #0d1117, #090a0f);
+    color: var(--text-main);
+    line-height:1.6;
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:60px;
+    padding:0 30px;
+    background: rgba(15,17,22,0.9);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width:90%;
+    max-width:1200px;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
+}
+.logo-container { display:flex; align-items:center; gap:10px; }
+.logo-img { height:40px; border-radius:14px; }
+.logo-text-styled { color:#fff; font-weight:700; text-decoration:none; font-size:18px; }
+.nav-links { display:flex; gap:25px; list-style:none; }
+.nav-links a { color: var(--text-secondary); text-decoration:none; font-weight:600; transition:0.3s; }
+.nav-links a:hover { color:#fff; }
+.discord-btn { color:#fff; font-weight:800; text-decoration:none; font-size:14px; }
+
+/* HERO */
+.hero { height:100vh; display:flex; align-items:center; justify-content:space-between; padding:0 10%; position:relative; }
+.hero-content { max-width:700px; z-index:2; }
+.hero-top-text { color: var(--accent-color); text-transform:uppercase; font-weight:800; letter-spacing:1.5px; font-size:13px; margin-bottom:20px; display:block; }
+.hero-content h1 { font-size:72px; font-weight:900; line-height:1.05; margin-bottom:25px; letter-spacing:-2px; }
+.gradient-word { 
+    background: linear-gradient(270deg,#8b5cf6,#3b82f6,#10b981,#f97316,#facc15,#ef4444,#8b5cf6); 
+    background-size:400% 400%; 
+    -webkit-background-clip:text; 
+    background-clip:text; 
+    color:transparent; 
+    animation: gradientMove 8s ease infinite; 
+}
+@keyframes gradientMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+.hero-content p { color: var(--text-secondary); font-size:18px; margin-bottom:40px; font-weight:500; }
+.hero-btns { display:flex; gap:15px; }
+.btn { padding:14px 28px; border-radius:12px; font-weight:800; text-decoration:none; transition:0.3s; }
+.btn-blue { background:var(--accent-color); color:#fff; }
+.btn-blue:hover { background:#fff; color: var(--accent-color); box-shadow:0 0 20px var(--accent-color); }
+.btn-outline { background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:#fff; }
+.btn-outline:hover { background: var(--accent-color); color:#fff; box-shadow:0 0 20px var(--accent-color); }
+.bg-tas-image { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 300px; opacity: 0.04; pointer-events: none; z-index:1; }
+
+/* STATS */
+.stats-bar { display:flex; justify-content:space-around; padding:60px 10%; background: rgba(15,17,22,0.95); border-top:1px solid rgba(255,255,255,0.05); }
+.stat-item { text-align:center; }
+.stat-item h2 { font-size:48px; font-weight:900; color: var(--accent-color); letter-spacing:-2px; }
+.stat-item p { color: var(--text-secondary); text-transform:uppercase; font-weight:700; font-size:12px; letter-spacing:1px; }
+
+/* SECTIONS */
+section { padding:100px 10%; position:relative; }
+.section-header { text-align:center; margin-bottom:60px; }
+.section-header span { color: var(--accent-color); font-weight:800; font-size:12px; letter-spacing:2px; }
+.section-header h2 { font-size:42px; font-weight:900; letter-spacing:-1.5px; margin-top:10px; }
+
+/* GRID & CARD */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:30px; }
+.card { background: rgba(20,22,30,0.9); border: 1px solid rgba(59,130,246,0.5); padding:40px; border-radius:25px; color:#fff; transition:0.5s ease; backdrop-filter: blur(6px); }
+.card:hover { transform: translateY(-15px); box-shadow:0 20px 40px rgba(59,130,246,0.4), 0 0 20px rgba(59,130,246,0.2); }
+.card i { color: var(--accent-color); margin-bottom:20px; }
+.card h3 { font-size:24px; font-weight:800; margin-bottom:15px; }
+.card p { color: var(--text-secondary); font-weight:500; }
+.game-card img { width:100%; border-radius:15px; margin-bottom:20px; border:1px solid rgba(255,255,255,0.05); }
+.member-card { text-align:center; transition:0.5s ease; text-decoration:none; color:inherit; display:block; }
+.member-card:hover { transform: scale(1.05); box-shadow:0 0 20px var(--accent-color); }
+.member-img { width:100px; height:100px; border-radius:50%; border:3px solid var(--accent-color); padding:5px; margin:0 auto 20px; }
+
+/* FOOTER */
+footer { padding:60px 10%; text-align:center; border-top:1px solid rgba(255,255,255,0.05); }
+footer p { color: var(--text-secondary); font-weight:600; font-size:14px; }
+
+/* MEDIA */
+@media (max-width:900px){
+    .hero { flex-direction:column; text-align:center; padding-top:150px; }
+    .hero-content h1{ font-size:45px; }
+    .nav-links { display:none; }
+    .hero-btns { justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo-container">
+        <img src="images/pixlands.png" alt="Pixlands Logo" class="logo-img">
+        <span class="logo-text-styled">Studios</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#oyunlar">Oyunlar</a></li>
+        <li><a href="#ekip">Ekip</a></li>
+    </ul>
+    <a href="https://discord.gg/nqweG4TBrC" class="discord-btn">Discord</a>
+</nav>
+
+<header class="hero">
+    <img src="images/sa.png" alt="SA Logo" class="bg-tas-image">
+    <div class="hero-content">
+        <span class="hero-top-text" id="hero-top">ROBLOX TÜRKİYE'NİN LİDERİ</span>
+        <h1 id="hero-title"><span class="gradient-word">Hayalleri</span> Kodlara Dönüştürüyoruz.</h1>
+        <p id="hero-desc">Pixlands, oyuncu topluluğunu merkeze alan, yüksek kaliteli ve sürükleyici Roblox deneyimleri geliştirir.</p>
+        <div class="hero-btns">
+            <a href="#oyunlar" class="btn btn-blue" id="btn-blue">Oyunlarımızı Gör</a>
+            <a href="#hakkimizda" class="btn btn-outline" id="btn-outline">Daha Fazla Bilgi</a>
+        </div>
+    </div>
+</header>
+
+<div class="stats-bar">
+    <div class="stat-item"><h2>250+</h2><p id="stat1">Toplam Üye</p></div>
+    <div class="stat-item"><h2>5.000+</h2><p id="stat2">Toplam Ziyaret</p></div>
+    <div class="stat-item"><h2>3+</h2><p id="stat3">Aktif Proje</p></div>
+</div>
+
+<section id="hakkimizda">
+    <div class="section-header">
+        <span id="about-span">BİZ KİMİZ?</span>
+        <h2 id="about-title">Sanal Dünyada Geleceği İnşa Ediyoruz</h2>
+    </div>
+    <div class="grid">
+        <div class="card"><i class="fas fa-bolt fa-3x"></i><h3 id="perf-title">Yüksek Performans</h3><p id="perf-desc">Oyunlarımız her cihazda en akıcı deneyimi sunması için optimize edilir.</p></div>
+        <div class="card"><i class="fas fa-shield-alt fa-3x"></i><h3 id="comm-title">Güçlü Topluluk</h3><p id="comm-desc">Discord üzerinden oyuncularımızla doğrudan iletişim kuruyoruz.</p></div>
+    </div>
+</section>
+
+<section id="oyunlar" style="background: rgba(10,11,15,0.95);">
+    <div class="section-header">
+        <span id="proj-span">PROJELERİMİZ</span>
+        <h2 id="proj-title">En Çok Oynanan Oyunlar</h2>
+    </div>
+    <div class="grid">
+        <div class="card game-card">
+            <img src="images/speed.jpg" alt="+1 Speed Escape">
+            <h3>+1 Speed Escape</h3>
+            <p>Geliştirme aşamasında yeni bir macera.</p>
+        </div>
+    </div>
+</section>
+
+<section id="ekip">
+    <div class="section-header"><span id="team-span">EKİBİMİZ</span><h2 id="team-title">Dünyaları İnşa Edenler</h2></div>
+    <div class="grid">
+        <a href="https://discord.com/users/1048511624606130287" target="_blank" class="card member-card">
+            <img src="images/Czunn.webp" class="member-img">
+            <h3>CzunnCode</h3>
+            <p>Founder & Lead Developer</p>
+        </a>
+        <a href="https://discord.com/users/1124748161882279976" target="_blank" class="card member-card">
+            <img src="images/RootCode.webp" class="member-img">
+            <h3>RootCode</h3>
+            <p>Web & Interface Engineer</p>
+        </a>
+        <a href="https://discord.com/users/1454747716088234024" target="_blank" class="card member-card">
+            <img src="images/Skylen.webp" class="member-img">
+            <h3>SkylenCode</h3>
+            <p>Developer</p>
+        </a>
+        <a href="https://discord.com/users/1306740438874587196" target="_blank" class="card member-card">
+            <img src="images/dext.webp" class="member-img">
+            <h3>Dext</h3>
+            <p>Yönetici</p>
+        </a>
+    </div>
+</section>
+
+<!-- Dil Seçici -->
+<section id="language-selector" style="padding:40px 10%; text-align:center; background: rgba(15,17,22,0.9); border-top:1px solid rgba(255,255,255,0.05);">
+    <label for="lang-select" style="color:var(--text-secondary); font-weight:600; margin-right:10px;">Dil / Language:</label>
+    <select id="lang-select" style="padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(0,0,0,0.7); color:#fff;">
+        <option value="tr">Türkçe</option>
+        <option value="en">English</option>
+    </select>
+</section>
+
+<footer><p>© 2026 Pixlands. Tüm Hakları Saklıdır.</p></footer>
+
+<script>
+// Dil verileri
+const translations = {
+  en: {
+    heroTitle: 'Dreams into Codes.',
+    heroTop: 'LEADER OF ROBLOX TURKEY',
+    heroDesc: 'Pixlands develops high-quality and immersive Roblox experiences centered around the player community.',
+    btnBlue: 'See Our Games',
+    btnOutline: 'More Info',
+    stat1: 'Total Members',
+    stat2: 'Total Visits',
+    stat3: 'Active Projects',
+    aboutSpan: 'WHO WE ARE?',
+    aboutTitle: 'Building the Future in the Virtual World',
+    perfTitle: 'High Performance',
+    perfDesc: 'Our games are optimized to deliver smooth gameplay on every device.',
+    commTitle: 'Strong Community',
+    commDesc: 'We communicate directly with our players via Discord.',
+    projSpan: 'OUR PROJECTS',
+    projTitle: 'Most Played Games',
+    teamSpan: 'OUR TEAM',
+    teamTitle: 'Builders of Worlds'
+  },
+  tr: {
+    heroTitle: 'Hayalleri Kodlara Dönüştürüyoruz.',
+    heroTop: 'ROBLOX TÜRKİYE\'NİN LİDERİ',
+    heroDesc: 'Pixlands, oyuncu topluluğunu merkeze alan, yüksek kaliteli ve sürükleyici Roblox deneyimleri geliştirir.',
+    btnBlue: 'Oyunlarımızı Gör',
+    btnOutline: 'Daha Fazla Bilgi',
+    stat1: 'Toplam Üye',
+    stat2: 'Toplam Ziyaret',
+    stat3: 'Aktif Proje',
+    aboutSpan: 'BİZ KİMİZ?',
+    aboutTitle: 'Sanal Dünyada Geleceği İnşa Ediyoruz',
+    perfTitle: 'Yüksek Performans',
+    perfDesc: 'Oyunlarımız her cihazda en akıcı deneyimi sunması için optimize edilir.',
+    commTitle: 'Güçlü Topluluk',
+    commDesc: 'Discord üzerinden oyuncularımızla doğrudan iletişim kuruyoruz.',
+    projSpan: 'PROJELERİMİZ',
+    projTitle: 'En Çok Oynanan Oyunlar',
+    teamSpan: 'EKİBİMİZ',
+    teamTitle: 'Dünyaları İnşa Edenler'
+  }
+};
+
+document.getElementById('lang-select').addEventListener('change', function() {
+  const lang = this.value;
+  const t = translations[lang];
+
+  document.getElementById('hero-title').innerHTML = `<span class="gradient-word">${t.heroTitle.split(' ')[0]}</span> ${t.heroTitle.split(' ').slice(1).join(' ')}`;
+  document.getElementById('hero-top').textContent = t.heroTop;
+  document.getElementById('hero-desc').textContent = t.heroDesc;
+  document.getElementById('btn-blue').textContent = t.btnBlue;
+  document.getElementById('btn-outline').textContent = t.btnOutline;
+  document.getElementById('stat1').textContent = t.stat1;
+  document.getElementById('stat2').textContent = t.stat2;
+  document.getElementById('stat3').textContent = t.stat3;
+  document.getElementById('about-span').textContent = t.aboutSpan;
+  document.getElementById('about-title').textContent = t.aboutTitle;
+  document.getElementById('perf-title').textContent = t.perfTitle;
+  document.getElementById('perf-desc').textContent = t.perfDesc;
+  document.getElementById('comm-title').textContent = t.commTitle;
+  document.getElementById('comm-desc').textContent = t.commDesc;
+  document.getElementById('proj-span').textContent = t.projSpan;
+  document.getElementById('proj-title').textContent = t.projTitle;
+  document.getElementById('team-span').textContent = t.teamSpan;
+  document.getElementById('team-title').textContent = t.teamTitle;
+});
+</script>
+
+</body>
+</html>
